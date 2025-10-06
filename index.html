@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/favicon" href="rc-10r.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boss RC-10r Remote</title>
+    <!-- Google Analytics - Only load in production -->
+    <script>
+      // Only load Google Analytics in production (not on localhost or dev server)
+      window.dataLayer = window.dataLayer || [];
+      const isProd = (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1' && !location.hostname.includes('192.168'));
+      window.gtag = function (){
+        if (isProd)  {
+          window.dataLayer.push(arguments);
+        } else {
+          console.debug('GA:', arguments[0], arguments[1], arguments[2]);
+        }     
+
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-6ESHMXCFGN');
+      if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1' && !location.hostname.includes('192.168')) {
+        // Load the Google Analytics script
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-6ESHMXCFGN';
+        document.head.appendChild(script);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="src/main.tsx"></script>
+  </body>
+</html>
